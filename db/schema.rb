@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_16_132041) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_16_210249) do
+  create_table "envios", force: :cascade do |t|
+    t.string "nombre"
+    t.string "comuna"
+    t.string "direccion"
+    t.string "email"
+    t.string "telefono"
+    t.text "observaciones"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "retiros", force: :cascade do |t|
     t.string "nombre"
     t.string "direccion"

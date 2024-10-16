@@ -78,9 +78,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Enviar</h6>
-                        <a class="collapse-item" href="buttons.html">Ingresar Envío</a>
-                        <a class="collapse-item" href="cards.html">Historial de Envios</a>
+                        <h6 class="collapse-header">Enviar</h6><!-- Aquí cambiamos el enlace por el helper de ruta -->
+            <a class="collapse-item" href="<%= new_envio_path %>">Ingresar Envío</a>
+            <a class="collapse-item" href="<%= envios_path %>">Historial de Envios</a>
                     </div>
                 </div>
             </li>

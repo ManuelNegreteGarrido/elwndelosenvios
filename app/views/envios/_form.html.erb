@@ -1,0 +1,59 @@
+<%= form_with(model: envio) do |form| %>
+  <% if envio.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(envio.errors.count, "error") %> errores impidieron que este envío se guardara:</h2>
+
+      <ul>
+        <% envio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <!-- Selección de comuna solo para la Región Metropolitana -->
+  <div>
+    <%= form.label :comuna, style: "display: block" %>
+    <%= form.select :comuna, options_for_select([
+      'Cerrillos', 'Cerro Navia', 'Conchalí', 'El Bosque', 'Estación Central', 'Huechuraba',
+      'Independencia', 'La Cisterna', 'La Florida', 'La Granja', 'La Pintana', 'La Reina',
+      'Las Condes', 'Lo Barnechea', 'Lo Espejo', 'Lo Prado', 'Macul', 'Maipú', 'Ñuñoa',
+      'Pedro Aguirre Cerda', 'Peñalolén', 'Providencia', 'Pudahuel', 'Quilicura',
+      'Quinta Normal', 'Recoleta', 'Renca', 'San Joaquín', 'San Miguel', 'San Ramón',
+      'Santiago', 'Vitacura', 'Buin', 'Calera de Tango', 'Colina', 'Curacaví', 'El Monte',
+      'Isla de Maipo', 'Lampa', 'María Pinto', 'Melipilla', 'Padre Hurtado', 'Paine',
+      'Peñaflor', 'Pirque', 'San Bernardo', 'San José de Maipo', 'Talagante'
+    ], include_blank: 'Selecciona una Comuna') %>
+  </div>
+
+  <!-- Campo de autocompletado para la dirección -->
+  <div>
+    <%= form.label :direccion, style: "display: block" %>
+    <%= form.text_field :direccion, id: 'direccion', placeholder: 'Escribe tu dirección...' %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :telefono, style: "display: block" %>
+    <%= form.text_field :telefono %>
+  </div>
+
+  <!-- Campo de observaciones o detalles adicionales -->
+  <div>
+    <%= form.label :detalles, style: "display: block" %>
+    <%= form.text_area :detalles %>
+  </div>
+
+  <div>
+    <%= form.submit "Guardar Envío" %>
+  </div>
+<% end %>

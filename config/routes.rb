@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :envios
   resources :retiros, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   get 'dashboard/index'
