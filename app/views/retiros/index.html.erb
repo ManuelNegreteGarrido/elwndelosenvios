@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Retiros</h1>
+
+<div id="retiros">
+  <% @retiros.each do |retiro| %>
+    <%= render retiro %>
+    <p>
+      <%= link_to "Show this retiro", retiro %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New retiro", new_retiro_path %>

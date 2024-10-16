@@ -42,7 +42,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<%= root_path%>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -51,21 +51,23 @@
             <hr class="sidebar-divider">
 
             <!-- Nav Item - Retiros Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Retiro</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Ingresar Retiro</h6>
-                        <a class="collapse-item" href="utilities-border.html">Ingresar Dirección de Retiro</a>
-                        <a class="collapse-item" href="utilities-animation.html">Historial de Direcciones</a>
-                    </div>
-                </div>
-            </li>
+          <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+        aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-wrench"></i>
+        <span>Retiro</span>
+    </a>
+    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+        data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Ingresar Retiro</h6>
+            <!-- Aquí cambiamos el enlace por el helper de ruta -->
+            <a class="collapse-item" href="<%= new_retiro_path %>">Ingresar Dirección de Retiro</a>
+            <a class="collapse-item" href="<%= retiros_path %>">Historial de Direcciones</a>
+        </div>
+    </div>
+</li>
+
 
             <!-- Nav Item - Envios Menu -->
             <li class="nav-item">

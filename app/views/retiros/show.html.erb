@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @retiro %>
+
+<div>
+  <%= link_to "Edit this retiro", edit_retiro_path(@retiro) %> |
+  <%= link_to "Back to retiros", retiros_path %>
+
+  <%= button_to "Destroy this retiro", @retiro, method: :delete %>
+</div>
